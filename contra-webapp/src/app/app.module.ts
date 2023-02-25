@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ColorPickerModule } from 'ngx-color-picker'; //https://www.npmjs.com/package/ngx-color-picker
+import { ClipboardModule } from 'ngx-clipboard'; //https://www.npmjs.com/package/ngx-clipboard
 
 // add applications specific icons. see: https://github.com/FortAwesome/angular-fontawesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -25,6 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     NgbModule,
     ColorPickerModule,
+    ClipboardModule,
     FontAwesomeModule
   ],
   providers: [],

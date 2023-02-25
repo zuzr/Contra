@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ColorPickerDirective } from 'ngx-color-picker';
+import { faCopy, faArrowUpArrowDown } from '@fortawesome/pro-regular-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,23 @@ import { ColorPickerDirective } from 'ngx-color-picker';
 })
 export class AppComponent {
   title = 'contra-webapp';
+
+  //Icons
+  copy = faCopy;
+  swap = faArrowUpArrowDown;
+
   constructor() {
     this.bgColor = "#FFFFFF";
     this.fontColor = "#000000";
   }
+
   public bgColor: string;
   public fontColor: string;
+
+  swapColors() {
+    var tempColor = this.bgColor;
+    this.bgColor = this.fontColor;
+    this.fontColor = tempColor;
+    return;
+  }
 }

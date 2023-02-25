@@ -1,9 +1,23 @@
 .background-square {
     width: 300px;
     height: 300px;
-    border: 1px solid gray;
+    border: 1px solid #ced4da;
 }
 
-.color-input {
+.icon-button {
+    color: #ced4da;
     cursor: pointer;
+}
+.icon-button:hover {
+    color: #676a6c;
+}
+
+.copy-icon {
+    position: relative;
+    right: 32px;
+}
+
+.swap-icon {
+    position: relative;
+    top: 7px;
 }

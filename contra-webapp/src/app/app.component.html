@@ -5,13 +5,25 @@
         {{fontColor}}
       </p>
     </div>
-    <div class="form-group">
-      <label for="bgColorInput" class="col-form-label">Background Color</label>
-      <input id="bgColorInput" class="color-input form-control pointer mb-3" [(colorPicker)]="bgColor" placeholder="{{bgColor}}"/>
-    </div>
-    <div class="form-group">
-      <label for="fontColorInput" class="col-form-label">Font Color</label>
-      <input id="fontColorInput" class="color-input form-control pointer" [(colorPicker)]="fontColor" placeholder="{{fontColor}}"/>
+    <div class="d-flex flex-row align-items-center">
+      <div class="d-flex flex-column align-items-center">
+        <div class="form-group">
+          <label for="bgColorInput" class="col-form-label">Background Color</label>
+          <div class="d-flex flex-row align-items-center">
+            <input id="bgColorInput" class="color-input form-control me-2" [(colorPicker)]="bgColor" value="{{bgColor}}"/>
+            <fa-icon [icon]="copy" class="icon-button copy-icon" ngxClipboard [cbContent]="bgColor"></fa-icon>
+          </div>
+          
+        </div>
+        <div class="form-group">
+          <label for="fontColorInput" class="col-form-label">Font Color</label>
+          <div class="d-flex flex-row align-items-center">
+            <input id="fontColorInput" class="color-input form-control me-2" [(colorPicker)]="fontColor" value="{{fontColor}}"/>
+            <fa-icon [icon]="copy" class="icon-button copy-icon" ngxClipboard [cbContent]="fontColor"></fa-icon>
+          </div>
+        </div>
+      </div>
+        <fa-icon [icon]="swap" class="icon-button swap-icon fa-2x" (click)="swapColors()"></fa-icon>
     </div>
     
   </div>
