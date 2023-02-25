@@ -1,4 +1,18 @@
-<div class="colorSquare d-flex align-items-center justify-content-center" [ngStyle]="{'color' : color }">
-  {{color || 'No Color Selected'}}
+<div class="container-fluid p-5">
+  <div class="d-flex flex-column align-items-center">
+    <div class="background-square d-flex align-items-center justify-content-center mb-5" [ngStyle]="{'background-color' : bgColor }">
+      <p [ngStyle]="{'color' : fontColor }">
+        {{fontColor}}
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="bgColorInput" class="col-form-label">Background Color</label>
+      <input id="bgColorInput" class="color-input form-control pointer mb-3" [(colorPicker)]="bgColor" placeholder="{{bgColor}}"/>
+    </div>
+    <div class="form-group">
+      <label for="fontColorInput" class="col-form-label">Font Color</label>
+      <input id="fontColorInput" class="color-input form-control pointer" [(colorPicker)]="fontColor" placeholder="{{fontColor}}"/>
+    </div>
+    
+  </div>
 </div>
-<input class="" [cpOKButton]="true" [cpOKButtonText]="'Apply'" [cpOKButtonClass]="''" [(colorPicker)]="color" />

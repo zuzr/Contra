@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ColorPickerDirective } from 'ngx-color-picker';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'contra-webapp';
   constructor() {
-    this.color = "#FFFFFF";
+    this.bgColor = "#FFFFFF";
+    this.fontColor = "#000000";
   }
-  public color: string;
+  public bgColor: string;
+  public fontColor: string;
 }

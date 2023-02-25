@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { ColorPickerModule } from 'ngx-color-picker'; //https://www.npmjs.com/package/ngx-color-picker
 
 // add applications specific icons. see: https://github.com/FortAwesome/angular-fontawesome
@@ -21,6 +23,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppRoutingModule,
     CommonModule,
     FormsModule,
+    NgbModule,
     ColorPickerModule,
     FontAwesomeModule
   ],
