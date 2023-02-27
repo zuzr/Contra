@@ -1,4 +1,24 @@
-# ContraWebapp
+# Get Started
+
+## Cloning the Repo
+
+- Navigate to the GitHub-hosted Contra repo here: https://github.com/zuzr/contra
+- Clone the project via HTTPS: 
+  - GitHub Desktop
+    - Code > Local > "Open with GitHub Desktop"
+  - Other source control app
+    - Code > Local > HTTPS
+    - Copy link (https://github.com/zuzr/contra.git)
+    - Add repo in your source control app by pasting the link
+
+## Running the App
+- Open terminal and change directory to ./contra/contra_webapp
+- Install dependencies by running `npm install`
+- Build project by running `ng build`
+- Start Angular development server by running `ng serve`
+- Open `http://localhost:4200/` in your web browser
+
+# From Angular:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
