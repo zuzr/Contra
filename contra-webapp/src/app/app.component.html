@@ -5,7 +5,7 @@
         {{fontColor}}
       </p>
     </div>
-    <div class="d-flex flex-row align-items-center">
+    <div class="d-flex flex-row align-items-center mb-5">
       <div class="d-flex flex-column align-items-center">
         <div class="form-group">
           <label for="bgColorInput" class="col-form-label">Background Color</label>
@@ -25,6 +25,7 @@
       </div>
         <fa-icon [icon]="swap" class="icon-button swap-icon fa-2x" (click)="swapColors()"></fa-icon>
     </div>
-    
+    <a class="btn btn-primary btn-lg" (click)="checkContrast(fontColor, bgColor)">Check Contrast<fa-icon [icon]="chevronRight" class="ms-2"></fa-icon></a>
+    <h1>{{contrastResult}}</h1>
   </div>
 </div>
