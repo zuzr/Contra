@@ -33,10 +33,10 @@ export class AppComponent {
   public contrastResult: string;
 
   checkContrast(color1: string, color2: string) {
-    if (this.contrastCheck.isLevelAA(color1, color2, 14)) {
-      this.contrastResult = "AA"
-    } if (this.contrastCheck.isLevelAAA(color1, color2, 14)) {
+    if (this.contrastCheck.isLevelAAA(color1, color2, 72)) {
       this.contrastResult = "AAA"
+    } else if (this.contrastCheck.isLevelAA(color1, color2, 72)) {
+      this.contrastResult = "AA"
     } else {
       this.contrastResult = "FAIL"
     }
