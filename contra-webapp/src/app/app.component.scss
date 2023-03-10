@@ -17,7 +17,7 @@
     right: 32px;
 }
 
-.swap-icon {
+.swap-vertical-icon {
     position: relative;
     top: 7px;
 }
@@ -26,4 +26,27 @@
     padding: 5rem 10rem !important;
     font-size: 2rem;
     border-radius: 5rem;
+}
+
+// Color Picker
+.color-input {
+    display: none;
+}
+color-picker {
+    display: block !important;
+    width: fit-content !important;
+    .color-picker {
+        display: block !important;
+        width: 230px !important;
+        left: unset !important;
+        position: unset !important;
+        //background-color: black !important;
+        .type-policy {
+            position: relative !important;
+            top: unset !important;
+            right: unset !important;
+            bottom: 62px !important;
+            left: 202px !important;
+        }
+    }
 }
