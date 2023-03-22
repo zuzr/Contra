@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class ContrastCheckerComponent {
+export class AppComponent {
   @Input()
   foregroundColors: string[] = [];
   @Input()
@@ -265,67 +265,3 @@ export class ContrastCheckerComponent {
     return "#" + red + green + blue;
   }
 }
-
-
-
-/* 
-// Non-GPT code
-import { Component, ViewEncapsulation } from '@angular/core';
-import { faCopy, faArrowUpArrowDown, faChevronRight, faArrowRightArrowLeft } from '@fortawesome/pro-regular-svg-icons';
-
-// Generated ts declaration files with: https://github.com/Microsoft/dts-gen
-import 'node_modules/color-contrast-checker/src/color-contrast-checker.js'; //https://www.npmjs.com/package/color-contrast-checker?activeTab=explore
-import color_contrast_checker from 'node_modules/color-contrast-checker/src/color-contrast-checker.js';
-
-declare function checkColors(foregroundColor: any, backgroundColor: any): any;
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-})
-
-export class AppComponent {
-  title = 'contra-webapp';
-
-  //Icons
-  copy = faCopy;
-  swapVertical = faArrowUpArrowDown;
-  swapHorizontal = faArrowRightArrowLeft;
-  chevronRight = faChevronRight;
-
-  constructor(
-
-  ) {
-    this.bgColor = "#FFFFFF";
-    this.fontColor = "#000000";
-    this.contrastCheck = new color_contrast_checker();
-    this.contrastResult = "No contrast result";
-  }
-
-  public bgColor: string;
-  public fontColor: string;
-  public contrastCheck: any;
-  public contrastResult: string;
-
-  // Set contrast result given a foreground color and background color at 72pt font
-  checkContrast(color1: string, color2: string) {
-    if (this.contrastCheck.isLevelAAA(color1, color2, 72)) {
-      this.contrastResult = "AAA"
-    } else if (this.contrastCheck.isLevelAA(color1, color2, 72)) {
-      this.contrastResult = "AA"
-    } else {
-      this.contrastResult = "FAIL"
-    }
-  }
-
-  // This function enables the "swap" icon button to swap the background and font colors on click.
-  swapColors(color1: string, color2: string) {
-    var tempColor: string = color1;
-    color1 = this.fontColor;
-    color2 = tempColor;
-    return;
-  }
-}
- */
