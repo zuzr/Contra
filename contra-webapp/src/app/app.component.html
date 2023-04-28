@@ -1,4 +1,35 @@
-<div *ngFor="let foreground of foregroundColors">
+<form>
+  <div>
+    <label for="foreground">Foreground Color:</label>
+    <input type="text" id="foreground" [(ngModel)]="foregroundColor">
+  </div>
+  <div>
+    <label for="background">Background Color:</label>
+    <input type="text" id="background" [(ngModel)]="backgroundColor">
+  </div>
+  <div>
+    <label for="font-weight">Font Weight:</label>
+    <select id="font-weight" [(ngModel)]="fontWeight">
+      <option value="">Normal</option>
+      <option value="bold">Bold</option>
+    </select>
+  </div>
+  <div>
+    <label for="font-size">Font Size:</label>
+    <select id="font-size" [(ngModel)]="fontSize">
+      <option value="">Normal</option>
+      <option value="large">Large</option>
+    </select>
+  </div>
+</form>
+
+<div>
+  <p [style.color]="foregroundColor" [style.background-color]="backgroundColor" [style.font-weight]="fontWeight" [style.font-size]="fontSize">Example Text</p>
+  <p>{{ calculateContrast(foregroundColor, backgroundColor, fontSize) }}</p>
+  <p *ngIf="newForeground && newBackground">Recommended Colors: Foreground: {{ newForeground }}, Background: {{ newBackground }}</p>
+</div>
+
+<!-- <div *ngFor="let foreground of foregroundColors">
   <div *ngFor="let background of backgroundColors">
     <h2>Foreground Color: {{ foreground }}</h2>
     <h2>Background Color: {{ background }}</h2>
@@ -12,4 +43,4 @@
     <p>{{ calculateContrast(foreground, background, 'component') }}</p>
     <hr>
   </div>
-</div>
+</div> -->

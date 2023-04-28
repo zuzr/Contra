@@ -6,15 +6,25 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  @Input()
+  /* @Input()
   foregroundColors: string[] = [];
   @Input()
-  backgroundColors: string[] = [];
+  backgroundColors: string[] = []; */
+
+  @Input()
+  foregroundColor: string = '';
+  @Input()
+  backgroundColor: string = '';
   @Input()
   fontWeight: string = '';
   @Input()
   fontSize: string = '';
   @Output() recommendedColors = new EventEmitter<any>();
+
+  newForeground: string | undefined;
+  newBackground: string | undefined;
+
+  
 
   calculateContrast(foreground: string, background: string, size: string): string {
     // Calculate contrast using the foreground, background, font weight, and font size inputs
@@ -51,6 +61,8 @@ export class AppComponent {
       }
 
       // Emit the recommended colors
+      this.newForeground = newForeground;
+      this.newBackground = newBackground;
       this.recommendedColors.emit({
         foreground: newForeground,
         background: newBackground
