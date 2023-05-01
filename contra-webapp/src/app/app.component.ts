@@ -2,8 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { faCopy, faArrowUpArrowDown, faChevronRight, faArrowRightArrowLeft } from '@fortawesome/pro-regular-svg-icons';
 
 // Generated ts declaration files with: https://github.com/Microsoft/dts-gen
-import 'node_modules/color-contrast-checker/src/color-contrast-checker.js'; //https://www.npmjs.com/package/color-contrast-checker?activeTab=explore
-import color_contrast_checker from 'node_modules/color-contrast-checker/src/color-contrast-checker.js';
+
 
 declare function checkColors(foregroundColor: any, backgroundColor: any): any;
 
@@ -28,7 +27,6 @@ export class AppComponent {
   ) {
     this.bgColor = "#FFFFFF";
     this.fontColor = "#000000";
-    this.contrastCheck = new color_contrast_checker();
     this.contrastResult = "No contrast result";
 
     // For ColorMind API
