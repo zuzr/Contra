@@ -1,7 +1,29 @@
-<div class="container-xl p-5">
-  <div class="d-flex flex-column align-items-start">
+<div class="col-4 align-items-start mx-5">
+    <label for="guidelineSelect" class="col-form-label"><b>Select Guideline</b></label>
+    <select class="form-select mb-3" id="guidelineSelect">
+      <option selected>AA</option>
+      <option value="1">AAA</option>
+    </select>
+
+    <h5>Text/Component Colors</h5>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Headline</span>
+      <input type="text" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text">Body</span>
+      <input type="text" class="form-control">
+    </div>
+    <div class="container text-center mb-3">
+      <a class="link-underline-primary" href="#" role="button">Add color</a>
+    </div>
+    <h5>Background Colors</h5>
+  </div>
+
+    
     
     <!-- Display Square -->
+  <div class="col-6 align-items-end">
     <div class="background-square d-flex align-items-center justify-content-center mb-5" [ngStyle]="{'background-color' : bgColor }">
       <p [ngStyle]="{'color' : fontColor }">
         {{fontColor}}
@@ -28,6 +50,7 @@
         <input id="fontColorInput" class="color-input me-2" [(colorPicker)]="fontColor" [cpOutputFormat]="'hex'" [cpToggle]="true"/>
       </div>
     </div>
+    </div>
 
     <!-- Old, vertical, opening/closing color pickers -->
     <!-- <div class="d-flex flex-row align-items-center mb-5">
@@ -47,5 +70,5 @@
       </div>
     </div>
     <fa-icon [icon]="swapVertical" class="icon-button swap-vertical-icon fa-2x" (click)="swapColors(fontColor, bgColor)"></fa-icon> -->
-  </div>
-</div>
+
+
