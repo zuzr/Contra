@@ -11,24 +11,24 @@
       </select>
 
       <label for="enterTextColor" class="col-form-label"><b> Text/Component Colors </b></label>
-      <div class="input-group mb-3" id="enterTextColor">
-        <span class="input-group-text">Headline</span>
-        <input type="text" class="form-control">
-      </div>
-      <div class="input-group mb-3" id="enterTextColor">
-        <span class="input-group-text">Body</span>
-        <input type="text" class="form-control">
-      </div>
-      <input id="fontColorInput" class="color-input me-2" [(colorPicker)]="fontColor" [cpOutputFormat]="'hex'" [cpToggle]="true" />
-      <div class="container text-center mb-3">
-        <a class="link-underline-primary" href="#" role="button">Add color</a>
-      </div>
+        <div class="input-group mb-3" id="enterTextColor">
+          <span class="input-group-text">Headline</span>
+          <input type="text" class="form-control">
+        </div>
+        <div class="input-group mb-3" id="enterTextColor">
+          <span class="input-group-text">Body</span>
+          <input type="text" class="form-control">
+        </div>
+     <input id="fontColorInput" class="color-input me-2" [(colorPicker)]="fontColor" [cpOutputFormat]="'hex'" [cpToggle]="true" />
+        <div class="container text-center mb-3">
+          <a class="link-underline-primary" href="#" role="button">Add color</a>
+        </div>
 
-      <div class=" container">
-        <fa-icon [icon]="swapHorizontal" class="icon-button fa-2x" (click)="swapColors(fontColor, bgColor)"></fa-icon>
-      </div>
-      <label for="enterBackgroundColor" class="col-form-label"><b> Background Colors </b></label>
-      <input id="bgColorInput" class="color-input me-2" [(colorPicker)]="bgColor" [cpOutputFormat]="'hex'" [cpToggle]="true" />
+        <div class=" container">
+          <fa-icon [icon]="swapHorizontal" class="icon-button fa-2x" (click)="swapColors(fontColor, bgColor)"></fa-icon>
+        </div>
+     <label for="enterBackgroundColor" class="col-form-label"><b> Background Colors </b></label>
+     <input id="bgColorInput" class="color-input me-2" [(colorPicker)]="bgColor" [cpOutputFormat]="'hex'" [cpToggle]="true" />
     </div>
 
 
@@ -48,8 +48,8 @@
       <a class="btn btn-primary mb-5" (click)="checkContrast(fontColor, bgColor)">Check Contrast<fa-icon [icon]="chevronRight" class="ms-2"></fa-icon></a>
 
       </div>
-    </div>
   </div>
+</div>
 
   <!-- Old, vertical, opening/closing color pickers -->
   <!-- <div class="d-flex flex-row align-items-center mb-5">
