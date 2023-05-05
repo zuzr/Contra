@@ -1,74 +1,73 @@
-<div class="col-4 align-items-start mx-5">
-    <label for="guidelineSelect" class="col-form-label"><b>Select Guideline</b></label>
-    <select class="form-select mb-3" id="guidelineSelect">
-      <option selected>AA</option>
-      <option value="1">AAA</option>
-    </select>
+<div class="container-fluid">
+  <h1>Contra</h1>
+</div>
+<div class="container-fluid">
+  <div class="row align-items-start">
+    <div class="col-4">
+      <label for="guidelineSelect" class="col-form-label"><b>Select Guideline</b></label>
+      <select class="form-select mb-3" id="guidelineSelect">
+        <option selected>AA</option>
+        <option value="1">AAA</option>
+      </select>
 
-    <h5>Text/Component Colors</h5>
-    <div class="input-group mb-3">
-      <span class="input-group-text">Headline</span>
-      <input type="text" class="form-control">
-    </div>
-    <div class="input-group mb-3">
-      <span class="input-group-text">Body</span>
-      <input type="text" class="form-control">
-    </div>
-    <div class="container text-center mb-3">
-      <a class="link-underline-primary" href="#" role="button">Add color</a>
-    </div>
-    <h5>Background Colors</h5>
-  </div>
-
-    
-    
-    <!-- Display Square -->
-  <div class="col-6 align-items-end">
-    <div class="background-square d-flex align-items-center justify-content-center mb-5" [ngStyle]="{'background-color' : bgColor }">
-      <p [ngStyle]="{'color' : fontColor }">
-        {{fontColor}}
-      </p>
-    </div>
-
-    <!-- Contrast Result -->
-    <h1>{{contrastResult}}</h1>
-
-    <!-- Check Contrast Button -->
-    <a class="btn btn-primary mb-5" (click)="checkContrast(fontColor, bgColor)">Check Contrast<fa-icon [icon]="chevronRight" class="ms-2"></fa-icon></a>
-
-    <!-- Color Pickers -->
-    <div class="row d-flex align-items-center justify-content-center mb-5">
-      <div class="col form-group">
-        <label for="bgColorInput" class="col-form-label">Background Color</label>
-        <input id="bgColorInput" class="color-input me-2" [(colorPicker)]="bgColor" [cpOutputFormat]="'hex'" [cpToggle]="true"/>
+      <label for="enterTextColor" class="col-form-label"><b> Text/Component Colors </b></label>
+      <div class="input-group mb-3" id="enterTextColor">
+        <span class="input-group-text">Headline</span>
+        <input type="text" class="form-control">
       </div>
-      <div class="col d-flex align-items-center justify-content-center">
+      <div class="input-group mb-3" id="enterTextColor">
+        <span class="input-group-text">Body</span>
+        <input type="text" class="form-control">
+      </div>
+      <input id="fontColorInput" class="color-input me-2" [(colorPicker)]="fontColor" [cpOutputFormat]="'hex'" [cpToggle]="true" />
+      <div class="container text-center mb-3">
+        <a class="link-underline-primary" href="#" role="button">Add color</a>
+      </div>
+
+      <div class=" container">
         <fa-icon [icon]="swapHorizontal" class="icon-button fa-2x" (click)="swapColors(fontColor, bgColor)"></fa-icon>
       </div>
-      <div class="col form-group">
-        <label for="fontColorInput" class="col-form-label">Font Color</label>
-        <input id="fontColorInput" class="color-input me-2" [(colorPicker)]="fontColor" [cpOutputFormat]="'hex'" [cpToggle]="true"/>
-      </div>
-    </div>
+      <label for="enterBackgroundColor" class="col-form-label"><b> Background Colors </b></label>
+      <input id="bgColorInput" class="color-input me-2" [(colorPicker)]="bgColor" [cpOutputFormat]="'hex'" [cpToggle]="true" />
     </div>
 
-    <!-- Old, vertical, opening/closing color pickers -->
-    <!-- <div class="d-flex flex-row align-items-center mb-5">
-      <div class="form-group">
-        <label for="bgColorInput" class="col-form-label">Background Color</label>
-        <div class="d-flex flex-row align-items-center">
-          <input id="bgColorInput" class="color-input form-control me-2" [(colorPicker)]="bgColor" [cpOutputFormat]="'rgba'" value="{{bgColor}}"/>
-          <fa-icon [icon]="copy" class="icon-button copy-icon" ngxClipboard [cbContent]="bgColor"></fa-icon>
-        </div>
+
+
+    <!-- Display Square -->
+    <div class="col-6">
+      <div class="background-square d-flex align-items-center justify-content-center mb-5" [ngStyle]="{'background-color' : bgColor }">
+        <p [ngStyle]="{'color' : fontColor }">
+          {{fontColor}}
+        </p>
       </div>
-      <div class="form-group">
-        <label for="fontColorInput" class="col-form-label">Font Color</label>
-        <div class="d-flex flex-row align-items-center">
-          <input id="fontColorInput" class="color-input form-control me-2" [(colorPicker)]="fontColor" value="{{fontColor}}"/>
-          <fa-icon [icon]="copy" class="icon-button copy-icon" ngxClipboard [cbContent]="fontColor"></fa-icon>
-        </div>
+
+      <!-- Contrast Result -->
+      <h1>{{contrastResult}}</h1>
+
+      <!-- Check Contrast Button -->
+      <a class="btn btn-primary mb-5" (click)="checkContrast(fontColor, bgColor)">Check Contrast<fa-icon [icon]="chevronRight" class="ms-2"></fa-icon></a>
+
       </div>
     </div>
-    <fa-icon [icon]="swapVertical" class="icon-button swap-vertical-icon fa-2x" (click)="swapColors(fontColor, bgColor)"></fa-icon> -->
+  </div>
+
+  <!-- Old, vertical, opening/closing color pickers -->
+  <!-- <div class="d-flex flex-row align-items-center mb-5">
+    <div class="form-group">
+      <label for="bgColorInput" class="col-form-label">Background Color</label>
+      <div class="d-flex flex-row align-items-center">
+        <input id="bgColorInput" class="color-input form-control me-2" [(colorPicker)]="bgColor" [cpOutputFormat]="'rgba'" value="{{bgColor}}"/>
+        <fa-icon [icon]="copy" class="icon-button copy-icon" ngxClipboard [cbContent]="bgColor"></fa-icon>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fontColorInput" class="col-form-label">Font Color</label>
+      <div class="d-flex flex-row align-items-center">
+        <input id="fontColorInput" class="color-input form-control me-2" [(colorPicker)]="fontColor" value="{{fontColor}}"/>
+        <fa-icon [icon]="copy" class="icon-button copy-icon" ngxClipboard [cbContent]="fontColor"></fa-icon>
+      </div>
+    </div>
+  </div>
+  <fa-icon [icon]="swapVertical" class="icon-button swap-vertical-icon fa-2x" (click)="swapColors(fontColor, bgColor)"></fa-icon> -->
 
 
