@@ -14,20 +14,7 @@
     <!-- Check Contrast Button -->
     <a class="btn btn-primary mb-5" (click)="checkContrast(fontColor, bgColor)">Check Contrast<fa-icon [icon]="chevronRight" class="ms-2"></fa-icon></a>
 
-    <!-- Color Pickers -->
-    <div class="row d-flex align-items-center justify-content-center mb-5">
-      <div class="col form-group">
-        <label for="bgColorInput" class="col-form-label">Background Color</label>
-        <input id="bgColorInput" class="color-input me-2" [(colorPicker)]="bgColor" [cpOutputFormat]="'hex'" [cpToggle]="true"/>
-      </div>
-      <div class="col d-flex align-items-center justify-content-center">
-        <fa-icon [icon]="swapHorizontal" class="icon-button fa-2x" (click)="swapColors(fontColor, bgColor)"></fa-icon>
-      </div>
-      <div class="col form-group">
-        <label for="fontColorInput" class="col-form-label">Font Color</label>
-        <input id="fontColorInput" class="color-input me-2" [(colorPicker)]="fontColor" [cpOutputFormat]="'hex'" [cpToggle]="true"/>
-      </div>
-    </div>
+    <fg-bg-pair></fg-bg-pair>
 
     <!-- Old, vertical, opening/closing color pickers -->
     <!-- <div class="d-flex flex-row align-items-center mb-5">

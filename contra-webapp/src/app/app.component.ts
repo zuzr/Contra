@@ -1,9 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { faCopy, faArrowUpArrowDown, faChevronRight, faArrowRightArrowLeft } from '@fortawesome/pro-regular-svg-icons';
-
-// Generated ts declaration files with: https://github.com/Microsoft/dts-gen
-import 'node_modules/color-contrast-checker/src/color-contrast-checker.js'; //https://www.npmjs.com/package/color-contrast-checker?activeTab=explore
-import color_contrast_checker from 'node_modules/color-contrast-checker/src/color-contrast-checker.js';
+import { ColorEvent } from 'ngx-color';
 
 declare function checkColors(foregroundColor: any, backgroundColor: any): any;
 
@@ -11,7 +8,7 @@ declare function checkColors(foregroundColor: any, backgroundColor: any): any;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
@@ -28,8 +25,9 @@ export class AppComponent {
   ) {
     this.bgColor = "#FFFFFF";
     this.fontColor = "#000000";
-    this.contrastCheck = new color_contrast_checker();
+    /*this.contrastCheck = new color_contrast_checker();*/
     this.contrastResult = "No contrast result";
+    
 
     // For ColorMind API
     /* this.url = "http://colormind.io/api/";
@@ -46,13 +44,13 @@ export class AppComponent {
   public http: XMLHttpRequest; */
 
   checkContrast(color1: string, color2: string) {
-    if (this.contrastCheck.isLevelAAA(color1, color2, 72)) {
+    /*if (this.contrastCheck.isLevelAAA(color1, color2, 72)) {
       this.contrastResult = "AAA"
     } else if (this.contrastCheck.isLevelAA(color1, color2, 72)) {
       this.contrastResult = "AA"
     } else {
       this.contrastResult = "FAIL"
-    }
+    }*/
   }
 
   // This function enables the "swap" icon button to swap the background and font colors on click.
@@ -61,6 +59,10 @@ export class AppComponent {
     color1 = this.fontColor;
     color2 = tempColor;
     return;
+  }
+
+  handleChange($event: ColorEvent) {
+    console.log($event.color);
   }
 
   // For ColorMind API
