@@ -25,8 +25,10 @@ export class AppComponent {
   constructor(
 
   ) {
-    this.bgColor = "#FFFFFF";
-    this.fontColor = "#000000";
+    this.bgColor1 = "#FFFFFF";
+    this.bgColor2 = "#c6c6c6"
+    this.headlineColor = "#000000";
+    this.bodyColor = "#000000";
     this.contrastResult = "No contrast result";
 
     // For ColorMind API
@@ -34,8 +36,10 @@ export class AppComponent {
     this.http = new XMLHttpRequest(); */
   }
 
-  public bgColor: string;
-  public fontColor: string;
+  public bgColor1: string;
+  public bgColor2: string;
+  public headlineColor: string;
+  public bodyColor: string;
   public contrastCheck: any;
   public contrastResult: string;
 
@@ -56,7 +60,7 @@ export class AppComponent {
   // This function enables the "swap" icon button to swap the background and font colors on click.
   swapColors(color1: string, color2: string) {
     var tempColor: string = color1;
-    color1 = this.fontColor;
+    color1 = this.headlineColor;
     color2 = tempColor;
     return;
   }
