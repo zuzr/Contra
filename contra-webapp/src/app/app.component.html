@@ -11,18 +11,17 @@
         <option value="1">AAA</option>
       </select>
 
-
+      <!-- Text/Component Color inputs -->
       <label for="enterTextColor" class="col-form-label"><strong> Text/Component Colors </strong></label>
-      <div class="row flex-nowrap">
-        <div class="me-2 colorDisplaySquare" [ngStyle]="{'background-color' : fontColor}"></div>
-        <input id="fontColorInput" class="me-2 w-75" [(colorPicker)]="fontColor" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" />
+
+      <div class="input-group mb-3">
+        <div class="colorDisplaySquare" [ngStyle]="{'background-color' : headlineColor}"></div>
+        <input id="headlineColorInput" class="form-control" placeholder="Headline | {{headlineColor}}" [(colorPicker)]="headlineColor" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" />
       </div>
-      <p>{{fontColor}}</p>
 
-      <div class="input-group">
-          <div class="colorDisplaySquare" [ngStyle]="{'background-color' : fontColor}"></div>
-          <input id="fontColorInput" class="form-control" [(colorPicker)]="fontColor" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" />
-
+      <div class="input-group mb-3">
+        <div class="colorDisplaySquare" [ngStyle]="{'background-color' : bodyColor}"></div>
+        <input id="bodyColorInput" class="form-control" placeholder="Body | {{bodyColor}}" [(colorPicker)]="bodyColor" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" />
       </div>
 
       <div class="container mb-3">
@@ -30,29 +29,71 @@
       </div>
 
       <div class=" container">
-        <fa-icon [icon]="swapHorizontal" class="icon-button fa-2x" (click)="swapColors(fontColor, bgColor)"></fa-icon>
+        <fa-icon [icon]="swapHorizontal" class="icon-button fa-2x" (click)="swapColors(headlineColor, bgColor1)"></fa-icon>
       </div>
+
+      <!-- Background Color inputs -->
       <label for="enterBackgroundColor" class="col-form-label"><b> Background Colors </b></label>
-      <input id="bgColorInput" class="color-input me-2" [(colorPicker)]="bgColor" [cpOutputFormat]="'hex'" [cpToggle]="true" />
+
+      <div class="input-group mb-3">
+        <div class="colorDisplaySquare" [ngStyle]="{'background-color' : bgColor1}"></div>
+        <input id="bgColorInput1" class="form-control" placeholder="{{bgColor1}}" [(colorPicker)]="bgColor1" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" />
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="colorDisplaySquare" [ngStyle]="{'background-color' : bgColor2}"></div>
+        <input id="bgColorInput2" class="form-control" placeholder="{{bgColor2}}" [(colorPicker)]="bgColor2" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" />
+      </div>
+
+      <div class="container mb-3">
+        <a class="link-underline-primary" href="#" role="button">+ Add color</a>
+      </div>
+
     </div>
 
 
 
       <!-- Display Square -->
-      <div class="col-9">
-        <div class="background-square d-flex align-items-center justify-content-center mb-5" [ngStyle]="{'background-color' : bgColor }">
-          <p [ngStyle]="{'color' : fontColor }">
-            {{fontColor}}
+    <div class="col-9">
+      <div class="background-display mb-4" [ngStyle]="{'background-color' : bgColor1 }">
+        <div class="col mx-3">
+          <p class="my-4"><strong>Background Color: {{bgColor1}} </strong> </p>
+          <p class="mb-3"><strong> Headline Color: {{headlineColor}}</strong></p>
+          <h2 class="mb-5" [ngStyle]="{'color' : headlineColor }">
+            The wise wizard jinxed the lazy Lord.
+          </h2>
+          <p class="my-3">
+            <strong> Body Color: {{bodyColor}} </strong>
+          </p>
+          <p [ngStyle]="{'color' : bodyColor }">
+            The wise wizard jinxed the lazy Lord.
           </p>
         </div>
-
-        <!-- Contrast Result -->
-        <h1>{{contrastResult}}</h1>
-
-        <!-- Check Contrast Button -->
-        <a class="btn btn-primary mb-5" (click)="checkContrast(fontColor, bgColor)">Check Contrast<fa-icon [icon]="chevronRight" class="ms-2"></fa-icon></a>
-
       </div>
+
+      <div class="background-display mb-4" [ngStyle]="{'background-color' : bgColor2 }">
+        <div class="col mx-3">
+          <p class="my-4"><strong>Background Color: {{bgColor2}} </strong> </p>
+          <p class="mb-3"><strong> Headline Color: {{headlineColor}}</strong></p>
+          <h2 class="mb-5" [ngStyle]="{'color' : headlineColor }">
+            The wise wizard jinxed the lazy Lord.
+          </h2>
+          <p class="my-3">
+            <strong> Body Color: {{bodyColor}} </strong>
+          </p>
+          <p [ngStyle]="{'color' : bodyColor }">
+            The wise wizard jinxed the lazy Lord.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contrast Result -->
+      <h1>{{contrastResult}}</h1>
+
+      <!-- Check Contrast Button -->
+      <a class="btn btn-primary mb-5" (click)="checkContrast(headlineColor, bgColor1)">Check Contrast<fa-icon [icon]="chevronRight" class="ms-2"></fa-icon></a>
+
+    </div>
    </div>
 </div>
 
