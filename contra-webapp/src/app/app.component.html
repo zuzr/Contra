@@ -57,17 +57,19 @@
     <div class="col-9">
       <div class="background-display mb-4" [ngStyle]="{'background-color' : bgColor1 }">
         <div class="col mx-3">
-          <p class="my-4"><strong>Background Color: {{bgColor1}} </strong> </p>
-          <p class="mb-3"><strong> Headline Color: {{headlineColor}}</strong></p>
-          <h2 class="mb-5" [ngStyle]="{'color' : headlineColor }">
+          <p class="my-3"><strong>Background Color: {{bgColor1}} </strong> </p>
+          <p class="mb-2"><strong> Headline Color: {{headlineColor}}</strong></p>
+          <h2 class="mb-2" [ngStyle]="{'color' : headlineColor }">
             The wise wizard jinxed the lazy Lord.
           </h2>
-          <p class="my-3">
+          <p class="mb-5">{{contrastResult}}</p>
+          <p class="mb-2">
             <strong> Body Color: {{bodyColor}} </strong>
           </p>
-          <p [ngStyle]="{'color' : bodyColor }">
+          <p class="mb-2"[ngStyle]="{'color' : bodyColor }">
             The wise wizard jinxed the lazy Lord.
           </p>
+          <p class="mb-2">{{contrastResult}}</p>
         </div>
       </div>
 
