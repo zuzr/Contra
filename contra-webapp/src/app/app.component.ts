@@ -30,6 +30,7 @@ export class AppComponent {
     this.headlineColor = "#000000";
     this.bodyColor = "#000000";
     this.contrastResult = "No contrast result";
+    this.isLevelAA = true;
 
     // For ColorMind API
     /* this.url = "http://colormind.io/api/";
@@ -42,15 +43,16 @@ export class AppComponent {
   public bodyColor: string;
   public contrastCheck: any;
   public contrastResult: string;
+  public isLevelAA: boolean;
 
   // For ColorMind API
   /* public url: string;
   public http: XMLHttpRequest; */
 
-  checkContrast(color1: string, color2: string) {
-    if (this.contrastCheck.isLevelAAA(color1, color2, 72)) {
+  checkContrast(headlineColor: string, bgColor1: string) {
+    if (this.contrastCheck.isLevelAAA(headlineColor, bgColor1, 72)) {
       this.contrastResult = "AAA"
-    } else if (this.contrastCheck.isLevelAA(color1, color2, 72)) {
+    } else if (this.contrastCheck.isLevelAA(headlineColor, bgColor1, 72)) {
       this.contrastResult = "AA"
     } else {
       this.contrastResult = "FAIL"
