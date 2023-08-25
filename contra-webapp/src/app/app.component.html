@@ -60,20 +60,22 @@
             <div class="colorLabel text-bg-dark">
               <p class="my-3 mx-3"><strong>Background Color: {{bgColor1}} </strong> </p>
             </div>
-            <p class="mb-2"><strong> Headline Color: {{headlineColor}}</strong></p>
-            <h2 class="mb-2" [ngStyle]="{'color' : headlineColor }">
-              The wise wizard jinxed the lazy Lord.
-            </h2>
-            <p class="mb-5">{{contrastResult}}</p>
-            <p class="mb-2">
-              <strong> Body Color: {{bodyColor}} </strong>
-            </p>
-            <p class="mb-2" [ngStyle]="{'color' : bodyColor }">
-              The wise wizard jinxed the lazy Lord.
-            </p>
-            <p class="mb-2">{{contrastResult}}</p>
+            <div class="colorLabel text-white bg-secondary">
+              <p class="mb-2 mx-3"><strong> Headline: {{headlineColor}}</strong></p>
+            </div>
+              <h2 class="mb-2" [ngStyle]="{'color' : headlineColor }">
+                The wise wizard jinxed the lazy Lord.
+              </h2>
+              <p class="mb-5">{{contrastResult}}</p>
+              <p class="mb-2">
+                <strong> Body Color: {{bodyColor}} </strong>
+              </p>
+              <p class="mb-2" [ngStyle]="{'color' : bodyColor }">
+                The wise wizard jinxed the lazy Lord.
+              </p>
+              <p class="mb-2">{{contrastResult}}</p>
+            </div>
           </div>
-        </div>
     
 
     <div class="background-display mb-4" [ngStyle]="{'background-color' : bgColor2 }">
