@@ -67,6 +67,10 @@ export class AppComponent {
     return;
   }
 
+  addColorInput() {
+
+  }
+
   // For ColorMind API
   /* getColors() {
     let colorData: { [model: string]: [input: [r: number, g: number, b:number]] } = {};
