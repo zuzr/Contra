@@ -1,18 +1,12 @@
 <div class="container-xl p-5">
   <div class="d-flex flex-column align-items-center">
-    
+
     <!-- Display Square -->
     <div class="background-square d-flex align-items-center justify-content-center mb-5" [ngStyle]="{'background-color' : bgColor }">
       <p [ngStyle]="{'color' : fontColor }">
         {{fontColor}}
       </p>
     </div>
-
-    <!-- Contrast Result -->
-    <h1>{{contrastResult}}</h1>
-
-    <!-- Check Contrast Button -->
-    <a class="btn btn-primary mb-5" (click)="checkContrast(fontColor, bgColor)">Check Contrast<fa-icon [icon]="chevronRight" class="ms-2"></fa-icon></a>
 
     <fg-bg-pair></fg-bg-pair>
 

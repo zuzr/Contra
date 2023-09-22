@@ -1,3 +1,15 @@
-<color-chrome Picker (onChangeComplete)="handlePickerChangeComplete($event)" [color]="state" [disableAlpha]="true"></color-chrome> =
-<ngx-slider (userChange)="handleSliderChange($event)" [(value)]="lightness" [options]="options"></ngx-slider> 
-{{lightness}}
+<div class="d-flex" style="height: 250px" [ngStyle]="{'flex-direction': this.flexDir}">
+  <color-chrome Picker (onChangeComplete)="handlePickerChangeComplete($event.color.hsl)" [color]="state" [disableAlpha]="true"></color-chrome>
+  <div class="d-flex position-relative">
+    <div class="d-flex position-absolute flex-column-reverse justify-content-between target-range-viz">
+      <div *ngIf="ranges[0]" style="width: 16px; background-color: #d8e0f3;" [ngStyle]="{'height.%': (ranges[0][1]-ranges[0][0])*100}"></div>
+      <div></div>
+      <div *ngIf="ranges[1]" style="margin-left: auto; width: 16px; background-color: #d8e0f3;" [ngStyle]="{'height.%': (ranges[1][1]-ranges[1][0])*100}"></div>
+    </div>
+    <ngx-slider (userChange)="handleSliderChange($event)" [(value)]="lightness" [options]="options"></ngx-slider>
+  </div>
+</div>
+<!-- <div class="d-flex justify-content-between" style="height: 1rem">
+  <div *ngIf="ranges[0]">{{ranges[0]}}</div>
+  <div *ngIf="ranges[1]">{{ranges[1]}}</div>
+</div> -->

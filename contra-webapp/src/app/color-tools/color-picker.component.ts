@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Color, ColorEvent } from 'ngx-color';
 import { ChangeContext } from '@angular-slider/ngx-slider';
 
@@ -12,26 +12,50 @@ export class ColorPicker {
 
   constructor() {
     this.options = {
-      ceil: 100,
-      floor: 0
+      ceil: 1,
+      floor: 0,
+      step: 0.01,
+      hideLimitLabels: true,
+      hidePointerLabels: true,
+      vertical: true,
+      getPointerColor: (value: number): string => {
+        return 'gray';
+      }
     };
   }
 
-  @Input()
-  public options;
-  public state = { h: 0, s: 1, l: 1, a: 1 };
-  public lightness = 100;
+  @Input() public options;
+  @Input() public contrast: number = -1.0;
+  @Input() public flexDir: string = "row";
 
-  handlePickerChangeComplete($event: ColorEvent) {
-    this.state = $event.color.hsl;
-    this
-    this.lightness = Math.floor(this.state.l * 100);
+  // color picker
+  // h: 0-359, s: 0-100, l: 0-100, a: disabled
+  // the color picker only updates when the state variable is changed directly
+  public state = { h: 0, s: 0.5, l: 0.5, a: 0 };
+  // slider value (0-100)
+  // this is given to the slider from the picker, and received from the slider on slide
+  public lightness = 0.5;
+  public ranges: number[][] = [];
+
+  ngAfterViewInit() {
+    this.lightness = this.state.l;
+    console.log(this.state);
+    this.calculateTargetLightness.emit(false);
+  }
+
+  handlePickerChangeComplete($event: {h: number, s: number, l: number, a: number}) {
+    this.state = $event;
+    this.lightness = this.state.l;
+    this.calculateTargetLightness.emit(true);
   }
 
   handleSliderChange(changeContext: ChangeContext) {
-    let newState = Object.create(this.state);
-    newState.l = changeContext.value;
+    let newState = {...this.state};
+    let v = changeContext.value;
+    newState.l = v;
     this.state = newState;
+    this.calculateTargetLightness.emit(false);
   }
 
+  @Output("calculateTargetLightness") calculateTargetLightness: EventEmitter<any> = new EventEmitter();
 }
