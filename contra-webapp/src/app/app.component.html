@@ -14,11 +14,6 @@
       <!-- Text/Component Color inputs -->
       <label for="enterTextColor" class="col-form-label"><strong> Text/Component Colors </strong></label>
 
-      <div class="color-input-group mb-3">
-        <input class="color-display-square" [ngStyle]="{'background-color' : headlineColor}" [(colorPicker)]="headlineColor" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" [cpDisableInput]="true"/>
-        <input id="headlineColorInput" class="form-control" placeholder="Headline | {{headlineColor}}" [(ngModel)]="headlineColor" />
-      </div>
-
       <!-- <div class="color-input-group mb-3">
         <input id="bodyColorDisplaySquare" class="color-display-square" [ngStyle]="{'background-color' : bodyColor}" [(colorPicker)]="bodyColor" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" [cpDisableInput]="true" />
         <input id="bodyColorInput" class="form-control" placeholder="Body | {{bodyColor}}" [(ngModel)]="bodyColor" />
@@ -53,31 +48,35 @@
 
 
     <!-- Display Square -->
-      <div class="col-9">
-        <div class="background-display mb-4" [ngStyle]="{'background-color' : bgColor1 }">
-          <div class="col mx-3">
-            <div class="colorLabel text-bg-dark">
-              <p class="my-3 mx-3"><strong>Background Color: {{bgColor1}} </strong> </p>
+    <div class="col-9">
+      <div *ngFor="let bg of bgColors">
+        <div *ngFor="let fg of fgColors">
+          <div class="background-display mb-4" [ngStyle]="{'background-color' : bg }">
+            <div class="col mx-3">
+              <div class="colorLabel text-bg-dark">
+                <p class="my-3 mx-3"><strong>Background Color: {{bg}} </strong> </p>
+              </div>
+              <div class="colorLabel text-white bg-secondary">
+                <p class="mb-2 mx-3"><strong> Headline: {{fg}}</strong></p>
+              </div>
+                <h2 class="mb-2" [ngStyle]="{'color' : fg }">
+                  The wise wizard jinxed the lazy Lord.
+                </h2>
+                <p class="mb-5">{{contrastResult}}</p>
+                <p class="mb-2">
+                  <strong> Body Color: {{fg}} </strong>
+                </p>
+                <p class="mb-2" [ngStyle]="{'color' : fg }">
+                  The wise wizard jinxed the lazy Lord.
+                </p>
+                <p class="mb-2">{{contrastResult}}</p>
+              </div>
             </div>
-            <div class="colorLabel text-white bg-secondary">
-              <p class="mb-2 mx-3"><strong> Headline: {{headlineColor}}</strong></p>
-            </div>
-              <h2 class="mb-2" [ngStyle]="{'color' : headlineColor }">
-                The wise wizard jinxed the lazy Lord.
-              </h2>
-              <p class="mb-5">{{contrastResult}}</p>
-              <p class="mb-2">
-                <strong> Body Color: {{bodyColor}} </strong>
-              </p>
-              <p class="mb-2" [ngStyle]="{'color' : bodyColor }">
-                The wise wizard jinxed the lazy Lord.
-              </p>
-              <p class="mb-2">{{contrastResult}}</p>
-            </div>
-          </div>
+        </div>
+      </div>
 
 
-    <div class="background-display mb-4" [ngStyle]="{'background-color' : bgColor2 }">
+    <!-- <div class="background-display mb-4" [ngStyle]="{'background-color' : bgColor2 }">
       <div class="col mx-3">
         <p class="my-4"><strong>Background Color: {{bgColor2}} </strong> </p>
         <p class="mb-3"><strong> Headline Color: {{headlineColor}}</strong></p>
@@ -91,7 +90,7 @@
           The wise wizard jinxed the lazy Lord.
         </p>
       </div>
-    </div>
+    </div> -->
 
     <!-- Contrast Result -->
     <h1>{{contrastResult}}</h1>

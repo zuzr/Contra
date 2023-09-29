@@ -72,11 +72,19 @@ export class AppComponent {
   }
 
   addBgColorInput() {
-    this.bgColors.push("#FFFFFF");
+    if (this.bgColors.length < 4) {
+      this.bgColors.push("#FFFFFF");
+    } else {
+      //
+    }
   }
 
   addFgColorInput() {
-    this.fgColors.push("#000000");
+    if (this.fgColors.length < 4) {
+      this.fgColors.push("#000000");
+    } else {
+      //
+    }
   }
 
   // For ColorMind API
