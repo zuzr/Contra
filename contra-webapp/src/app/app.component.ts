@@ -25,8 +25,10 @@ export class AppComponent {
   constructor(
 
   ) {
+    this.bgColors = ["#FFFFFF", "#c6c6c6"];
     this.bgColor1 = "#FFFFFF";
-    this.bgColor2 = "#c6c6c6"
+    this.bgColor2 = "#c6c6c6";
+    this.fgColors = ["#000000", "#333333"];
     this.headlineColor = "#000000";
     this.bodyColor = "#000000";
     this.contrastResult = "No contrast result";
@@ -37,6 +39,8 @@ export class AppComponent {
     this.http = new XMLHttpRequest(); */
   }
 
+  public bgColors: string[];
+  public fgColors: string[];
   public bgColor1: string;
   public bgColor2: string;
   public headlineColor: string;
@@ -67,8 +71,12 @@ export class AppComponent {
     return;
   }
 
-  addColorInput() {
+  addBgColorInput() {
+    this.bgColors.push("#FFFFFF");
+  }
 
+  addFgColorInput() {
+    this.fgColors.push("#000000");
   }
 
   // For ColorMind API
