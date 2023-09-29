@@ -1,0 +1,33 @@
+.chrome-picker {
+    width: 100%;
+}
+:host {
+    display: block;
+    width: 100%;
+}
+::ng-deep {
+  .ngx-slider{
+
+    .ngx-slider-span.ngx-slider-bar {
+      height: calc(100% - 32px)!important;
+      top: 16px;
+    }
+
+    &.animate .ngx-slider-pointer {
+      transition: 0.1s linear!important;
+    }
+
+    .ngx-slider-pointer.ngx-slider-active:after {
+      background-color: white!important;
+      transition: 0.1s linear!important;
+    }
+  }
+}
+
+.target-range-viz {
+  width: 16px;
+  height: calc(100% - 32px);
+  top: 16px;
+  left: 14px;
+  position: relative;
+}

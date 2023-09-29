@@ -1,0 +1,6 @@
+<!-- Color Pickers -->
+<div class="row d-flex align-items-center justify-content-center mb-5">
+  <color-picker [contrast]="contrast" [flexDir]="'row'" (calculateTargetLightness)="calculateTargetLightness(0, $event)" #foreground></color-picker>
+  <color-picker [contrast]="contrast" [flexDir]="'row-reverse'" (calculateTargetLightness)="calculateTargetLightness(1, $event)" #background></color-picker>
+</div>
+<p>Contrast: {{contrast}}:1</p>

@@ -1,8 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { faCopy, faArrowUpArrowDown, faChevronRight, faArrowRightArrowLeft } from '@fortawesome/pro-regular-svg-icons';
-
-// Generated ts declaration files with: https://github.com/Microsoft/dts-gen
-
+import { ColorEvent } from 'ngx-color';
 
 declare function checkColors(foregroundColor: any, backgroundColor: any): any;
 
@@ -10,7 +8,7 @@ declare function checkColors(foregroundColor: any, backgroundColor: any): any;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {
@@ -53,14 +51,14 @@ export class AppComponent {
   /* public url: string;
   public http: XMLHttpRequest; */
 
-  checkContrast(headlineColor: string, bgColor1: string) {
-    if (this.contrastCheck.isLevelAAA(headlineColor, bgColor1, 72)) {
+  checkContrast(color1: string, color2: string) {
+    /*if (this.contrastCheck.isLevelAAA(color1, color2, 72)) {
       this.contrastResult = "AAA"
     } else if (this.contrastCheck.isLevelAA(headlineColor, bgColor1, 72)) {
       this.contrastResult = "AA"
     } else {
       this.contrastResult = "FAIL"
-    }
+    }*/
   }
 
   // This function enables the "swap" icon button to swap the background and font colors on click.
@@ -85,6 +83,10 @@ export class AppComponent {
     } else {
       //
     }
+  }
+
+  handleChange($event: ColorEvent) {
+    console.log($event.color);
   }
 
   // For ColorMind API
