@@ -2,6 +2,7 @@
   <h1>CONTRA</h1>
   <p class="w-25"><strong>Make it accessible.</strong> Select your text and background colors to see if they pass the contrast requirements.</p>
 </div>
+<fg-bg-pair></fg-bg-pair>
 <div class="container">
   <div class="row align-items-start">
     <div class="col-3">
@@ -19,7 +20,7 @@
         <input id="bodyColorInput" class="form-control" placeholder="Body | {{bodyColor}}" [(ngModel)]="bodyColor" />
       </div> -->
       <div *ngFor="let color of fgColors; index as i;" class="color-input-group mb-3">
-        <input id="bodyColorDisplaySquare" class="color-display-square" [ngStyle]="{'background-color' : color}" [(colorPicker)]="fgColors[i]" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" [cpDisableInput]="true"/>
+        <!-- <input id="bodyColorDisplaySquare" class="color-display-square" [ngStyle]="{'background-color' : color}" [(colorPicker)]="fgColors[i]" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" [cpDisableInput]="true"/> -->
         <input id="bodyColorInput" class="form-control" placeholder="{{color}}" [(ngModel)]="fgColors[i]" />
       </div>
 
@@ -35,7 +36,7 @@
       <label for="enterBackgroundColor" class="col-form-label"><b> Background Colors </b></label>
 
       <div *ngFor="let color of bgColors; index as i;" class="color-input-group mb-3">
-        <input id="bgColorDisplaySquare" class="color-display-square" [ngStyle]="{'background-color' : color}" [(colorPicker)]="bgColors[i]" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" [cpDisableInput]="true"/>
+        <!-- <input id="bgColorDisplaySquare" class="color-display-square" [ngStyle]="{'background-color' : color}" [(colorPicker)]="bgColors[i]" [cpOutputFormat]="'hex'" [cpCloseClickOutside]="true" [cpDisableInput]="true"/> -->
         <input id="bgColorInput" class="form-control" placeholder="{{color}}" [(ngModel)]="bgColors[i]" />
       </div>
 
