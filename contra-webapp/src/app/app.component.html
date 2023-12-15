@@ -50,7 +50,7 @@
 
     <!-- Display Square -->
     <div class="col-9">
-      <div *ngFor="let bg of bgColors">
+      <div *ngFor="let bg of bgColors" class="d-flex">
         <div *ngFor="let fg of fgColors">
           <div class="background-display mb-4" [ngStyle]="{'background-color' : bg }">
             <div class="col mx-3">
